@@ -17,7 +17,7 @@ function setName($name){
 
 }
 function getName(){
-    return $name;
+    return $this->name;
 
 }
 function setSalary($salary){
@@ -25,7 +25,7 @@ function setSalary($salary){
 
 }
 function getSalary(){
-    return $salary;
+    return $this->salary;
 
 }
 public function print(){
@@ -55,5 +55,83 @@ $employee2->print();
 $employee3=new Employee();
 $employee3->initialize("Andrea", 6000);
 $employee3->print();
+
+echo "<br>";
+echo "<hr>";
+//ejercicio 2
+
+class Shape{
+    protected $altura;
+    protected $base;
+    protected $result;
+    
+
+    public function __construct($altura, $base){
+        
+        $this->altura=$altura;
+        $this->base=$base;
+        
+       
+        
+    }
+
+    public function getAltura(){
+        return $this->altura;
+    }
+    public function setAltura($altura){
+        $this->altura=$altura;
+
+    }
+    public function getBase(){
+        return $this->base;
+
+    }
+    public function setBase($base){
+        $this->base=$base;
+
+    
+        
+    }
+    public function resultado(){
+        
+       echo $this->result;
+ 
+    }
+
+
+}
+class Triangulo extends Shape{
+
+    public function area(){
+
+    $this->result=($this->base*$this->altura)/2;
+    return $this->result;
+        
+    }
+    public function printArea(){
+       
+       
+        echo "El area del triangulo es, ".$this->area().".</br>";       
+    }
+
+}
+
+class Rectangulo extends Shape{
+
+    public function area(){
+
+        $this->result=$this->base*$this->altura;
+        return $this->result;
+    }
+        public function printArea(){
+        
+        echo "El area del rectangulo es, ".$this->area().".</br>";
+    }
+
+}
+$rectangulo1= new Rectangulo(10, 20);
+$rectangulo1->printArea();
+$trinangulo1= new Triangulo(12, 23);
+$trinangulo1->printArea();
 
 ?>
