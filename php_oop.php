@@ -33,7 +33,7 @@ public function print(){
     $pay= false;
 
    
-    if($this->salary>=6000){
+    if($this->salary>6000){
         echo "El empleado $this->name gana $this->salary, tendrá que pagar impuestos.</br>";
         $pay=true;
     }else{
